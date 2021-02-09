@@ -1,4 +1,5 @@
 FROM gitpod/workspace-dotnet-vnc
+FROM gitpod/workspace-mysql
 
 USER gitpod
 
