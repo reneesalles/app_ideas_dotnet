@@ -1,6 +1,6 @@
 FROM gitpod/workspace-dotnet-vnc
 
-USER gitpod
+USER root
 
 # Install MySQL
 RUN apt-get update \
