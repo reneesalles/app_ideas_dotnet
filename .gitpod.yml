@@ -3,6 +3,8 @@ image:
 
 # List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/config-ports/
 ports:
+  - port: 3001
+    onOpen: open-preview
   - port: 5000
     onOpen: ignore
   - port: 5001
@@ -24,7 +26,8 @@ tasks:
     command: |
       npm i -g @angular/cli &&
       gp await-port 5000 &&
-      echo 'TODO - Command to run Frontend here...'
+      cd ./tier-beginner &&
+      npm start
 
 github:
   prebuilds:
