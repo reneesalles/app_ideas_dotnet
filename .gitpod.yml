@@ -4,15 +4,25 @@ image:
 # List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/config-ports/
 ports:
   - port: 5000
-    onOpen: open-preview
+    onOpen: ignore
+  - port: 5001
+    onOpen: ignore
 
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - name: run_Tier_1_Begineer
-    init: dotnet run --project Tier_1_Begineer
   - name: MySQL
     command: >
         mysqld
+  # Backend needs to wait for MySQL instance to be up and running (gp await-port 3306)
+  - name: Backend
+    command: |
+      gp await-port 3306 &&
+      dotnet run --project backend
+  # Frontend needs to wait for Backend to be up and running (gp await-port 5000)
+  - name: Frontend
+    command: |
+      gp await-port 5000 &&
+      echo 'TODO - Command to run Frontend here...'
 
 github:
   prebuilds:
