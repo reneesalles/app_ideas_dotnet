@@ -3,10 +3,19 @@ image:
 
 # List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/config-ports/
 ports:
+  # tier_beginner port
   - port: 3001
     onOpen: open-preview
+  # mysql port
+  - port: 3306
+    onOpen: ignore
+  # maybe mysql https port
+  - port: 33060
+    onOpen: ignore
+  # backend port
   - port: 5000
     onOpen: ignore
+  # backend https port
   - port: 5001
     onOpen: ignore
 
