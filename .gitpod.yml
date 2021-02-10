@@ -20,7 +20,9 @@ tasks:
       dotnet run --project backend
   # Frontend needs to wait for Backend to be up and running (gp await-port 5000)
   - name: Frontend
+    before: export NG_CLI_ANALYTICS=ci
     command: |
+      npm i -g @angular/cli &&
       gp await-port 5000 &&
       echo 'TODO - Command to run Frontend here...'
 
