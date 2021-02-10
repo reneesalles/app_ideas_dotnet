@@ -5,17 +5,17 @@ image:
 ports:
   # tier_beginner port
   - port: 3001
-    onOpen: open-preview
-  # mysql port
+    onOpen: notify
+# mysql port
   - port: 3306
     onOpen: ignore
-  # maybe mysql https port
+# maybe mysql https port
   - port: 33060
     onOpen: ignore
-  # backend port
+# backend port
   - port: 5000
     onOpen: ignore
-  # backend https port
+# backend https port
   - port: 5001
     onOpen: ignore
 
@@ -24,12 +24,17 @@ tasks:
   - name: MySQL
     command: >
         mysqld
-  # Backend needs to wait for MySQL instance to be up and running (gp await-port 3306)
+# Backend needs to wait for MySQL instance to be up and running (gp await-port 3306)
   - name: Backend
     command: |
       gp await-port 3306 &&
       dotnet run --project backend
-  # Frontend needs to wait for Backend to be up and running (gp await-port 5000)
+# Backend Swagger needs to wait for Backend to be up and running (gp await-port 5000)
+  - name: Swagger
+    command: |
+      gp await-port 5000 &&
+      gp preview $(gp url 5000)/swagger
+# Frontend needs to wait for Backend to be up and running (gp await-port 5000)
   - name: Frontend
     before: export NG_CLI_ANALYTICS=ci
     command: |
@@ -44,21 +49,22 @@ github:
   prebuilds:
     # enable for the master/default branch (defaults to true)
     master: true
-    # enable for all branches in this repo (defaults to false)
+# enable for all branches in this repo (defaults to false)
     branches: true
-    # enable for pull requests coming from this repo (defaults to true)
+# enable for pull requests coming from this repo (defaults to true)
     pullRequests: true
-    # enable for pull requests coming from forks (defaults to false)
+# enable for pull requests coming from forks (defaults to false)
     pullRequestsFromForks: false
-    # add a check to pull requests (defaults to true)
+# add a check to pull requests (defaults to true)
     addCheck: false
-    # add a "Review in Gitpod" button as a comment to pull requests (defaults to false)
+# add a "Review in Gitpod" button as a comment to pull requests (defaults to false)
     addComment: false
-    # add a "Review in Gitpod" button to the pull request's description (defaults to false)
+# add a "Review in Gitpod" button to the pull request's description (defaults to false)
     addBadge: false
-    # add a label once the prebuild is ready to pull requests (defaults to false)
+# add a label once the prebuild is ready to pull requests (defaults to false)
     addLabel: false
 
 vscode:
   extensions:
     - ms-vscode.csharp@1.21.12:kw8SkO8+aVTSFug281WfQQ==
+    - humao.rest-client@0.24.4:zy4YO0p/vGcDbgPap4k4+A==
