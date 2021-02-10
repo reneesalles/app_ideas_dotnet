@@ -44,7 +44,7 @@ tasks:
       echo 'Starting up Frontend...'
       gp await-port 5000 &&
       echo n | npm i -g @angular/cli &&
-      cd ./tier-beginner &&
+      cd ./frontend &&
       echo n | npm i @angular/cli &&
       sleep 3 &&
       npm start
@@ -53,7 +53,7 @@ tasks:
     command: |
       echo 'Starting up AngularCLI...'
       gp await-port 3001 &&
-      cd ./tier-beginner
+      cd ./frontend
 
 github:
   prebuilds:
