@@ -33,9 +33,11 @@ tasks:
   - name: Frontend
     before: export NG_CLI_ANALYTICS=ci
     command: |
-      npm i -g @angular/cli &&
       gp await-port 5000 &&
+      echo n | npm i -g @angular/cli &&
       cd ./tier-beginner &&
+      echo n | npm i @angular/cli &&
+      sleep 3 &&
       npm start
 
 github:
