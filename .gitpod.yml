@@ -78,3 +78,8 @@ vscode:
   extensions:
     - ms-vscode.csharp@1.21.12:kw8SkO8+aVTSFug281WfQQ==
     - humao.rest-client@0.24.4:zy4YO0p/vGcDbgPap4k4+A==
+    - pkief.material-icon-theme@4.5.0:ckDTVCTpdr4G0ZmIlQWkZA==
+    - johnpapa.angular2@11.0.0:Tdxf5f1/A2bufxw/1kG2KQ==
+    - steoates.autoimport@1.5.3:Tr3qYUEEq73wrKwCWaYivQ==
+    - formulahendry.auto-close-tag@0.5.10:GSIjAJo5b8OeW5FdWSDA8A==
+    - coenraads.bracket-pair-colorizer@1.0.61:+jQByqALW0iXkhpd2yzYzQ==
