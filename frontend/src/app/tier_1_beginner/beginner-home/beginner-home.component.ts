@@ -11,6 +11,10 @@ export class BeginnerHomeComponent implements OnInit {
     {
       url: "bin2dec",
       name: "Bin2Dec"
+    },
+    {
+      url: "borderRadiusPreviewer",
+      name: "Border-radius Previewer"
     }
   ];
 

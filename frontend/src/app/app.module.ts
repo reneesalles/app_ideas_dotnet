@@ -19,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 
 import { BeginnerHomeComponent } from './tier_1_beginner/beginner-home/beginner-home.component';
 import { Bin2decComponent } from './tier_1_beginner/bin2dec/bin2dec.component';
+import { BorderRadiusPreviewerComponent } from './tier_1_beginner/border-radius-previewer/border-radius-previewer.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { Bin2decComponent } from './tier_1_beginner/bin2dec/bin2dec.component';
     HomeComponent,
     Bin2decComponent,
     BeginnerHomeComponent,
+    BorderRadiusPreviewerComponent,
   ],
   imports: [
     FormsModule,

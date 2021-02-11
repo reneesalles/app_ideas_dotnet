@@ -1,3 +1,4 @@
+import { BorderRadiusPreviewerComponent } from './tier_1_beginner/border-radius-previewer/border-radius-previewer.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'beginner/bin2dec',
     component: Bin2decComponent
+  },
+  {
+    path: 'beginner/borderRadiusPreviewer',
+    component: BorderRadiusPreviewerComponent
   }
 ];
 
