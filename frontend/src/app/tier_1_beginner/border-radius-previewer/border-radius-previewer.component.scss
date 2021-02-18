@@ -1,0 +1,175 @@
+.m-auto {
+  margin: auto;
+}
+.bg-info {
+  background-color: #17a2b8 !important;
+}
+.border {
+  border: 1px solid #dee2e6 !important;
+}
+.border-info {
+  border-color: #17a2b8!important;
+}
+
+#bordered_box {
+  min-width: 100px;
+  min-height: 100px;
+  position: relative;
+
+  width: var(--width, 100px);
+  height: var(--height, 100px);
+  border-radius: var(--border-radius, 0);
+}
+
+.handler {
+  display: flex;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+}
+
+.handler input[type=range] {
+  // -webkit-appearance: none;  /* Override default CSS styles */
+  // appearance: none;
+  width: 10px;
+  height: 10px;
+  // background: transparent;
+  // outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+}
+  .handler input[type=range]::-webkit-slider-thumb {
+    // -webkit-appearance: none; /* Override default look */
+    // appearance: none;
+    width: 10px;
+    height: 10px;
+    // background: white; /* Green background */
+    // border: 1px solid #333;
+    // border-radius: 50%;
+    cursor: pointer; /* Cursor on hover */
+  }
+  .handler input[type=range]::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    // background: white; /* Green background */
+    // border: 1px solid #333;
+    border-radius: 50%;
+    cursor: pointer; /* Cursor on hover */
+  }
+
+.blob-t {
+  top: 0;
+  left: 0;
+}
+  .blob-t input[type=range] {
+    min-width: var(--width);
+    transform-origin: left;
+    transform: rotate(0) translate3D(0, -10px, 0);
+  }
+.blob-r {
+  top: 0;
+  right: 0;
+}
+  .blob-r input[type=range] {
+    min-width: var(--height);
+    transform-origin: left;
+    transform: rotate(90deg) translate3D(-5px, -15px, 0);
+  }
+.blob-b {
+  bottom:0;
+  right: 0;
+}
+  .blob-b input[type=range] {
+    min-width: var(--width);
+    transform-origin: left;
+    transform: rotate(-180deg) translate3D(-10px, -10px, 0);
+  }
+.blob-l {
+  bottom: 0;
+  left: 0;
+}
+  .blob-l input[type=range] {
+    min-width: var(--height);
+    transform-origin: left;
+    transform: rotate(-90deg) translate3D(-5px, -5px, 0);
+  }
+
+.h-tlh{
+  top: 0;
+  left: 0;
+}
+  .h-tlh input[type=range] {
+    min-width: calc(var(--width) / 2);
+    transform-origin: left;
+    transform: rotate(0) translate3D(0, -10px, 0);
+  }
+.h-tlv {
+  top: 0;
+  left: 0;
+}
+  .h-tlv input[type=range] {
+    min-width: calc(var(--height) / 2);
+    transform-origin: left;
+    transform: rotate(90deg) translate3D(-5px, 5px, 0);
+  }
+.h-trh {
+  top: 0;
+  right: 0;
+}
+  .h-trh input[type=range] {
+    min-width: calc(var(--width) / 2);
+    transform-origin: left;
+    transform: rotate(180deg) translate3D(-10px, 10px, 0);
+  }
+.h-trv {
+  top: 0;
+  right: 0;
+}
+  .h-trv input[type=range] {
+    min-width: calc(var(--height) / 2);
+    transform-origin: left;
+    transform: rotate(90deg) translate3D(-5px, -15px, 0);
+  }
+.h-brh {
+  bottom:0;
+  right: 0;
+}
+  .h-brh input[type=range] {
+    min-width: calc(var(--width) / 2);
+    transform-origin: left;
+    transform: rotate(-180deg) translate3D(-10px, -10px, 0);
+  }
+.h-brv {
+  bottom: 0;
+  right: 0;
+}
+  .h-brv input[type=range] {
+    min-width: calc(var(--height) / 2);
+    transform-origin: left;
+    transform: rotate(-90deg) translate3D(-5px, 15px, 0);
+  }
+.h-blh {
+  bottom: 0;
+  left: 0;
+}
+  .h-blh input[type=range] {
+    min-width: calc(var(--width) / 2);
+    transform-origin: left;
+    transform: rotate(0) translate3D(0, 10px, 0);
+  }
+.h-blv {
+  bottom: 0;
+  left: 0;
+}
+  .h-blv input[type=range] {
+    min-width: calc(var(--height) / 2);
+    transform-origin: left;
+    transform: rotate(-90deg) translate3D(-5px, -5px, 0);
+  }
+
+#resultingOutput {
+  width: 50%;
+
+  textarea {
+    height: 90px;
+  }
+}

@@ -32,11 +32,11 @@ tasks:
       gp await-port 3306 &&
       dotnet run --project backend
 # Backend Swagger needs to wait for Backend to be up and running (gp await-port 5000)
-  - name: Swagger
-    command: |
-      echo 'Starting up Swagger...'
-      gp await-port 5000 &&
-      gp preview $(gp url 5000)/swagger
+#  - name: Swagger
+#    command: |
+#      echo 'Starting up Swagger...'
+#      gp await-port 5000 &&
+#      gp preview $(gp url 5000)/swagger
 # Frontend needs to wait for Backend to be up and running (gp await-port 5000)
   - name: Frontend
     before: export NG_CLI_ANALYTICS=ci

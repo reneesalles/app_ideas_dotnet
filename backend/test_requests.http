@@ -1,4 +1,4 @@
-@baseUrl = https://5000-azure-pig-q1yr5paq.ws-us03.gitpod.io
+@baseUrl = https://5000-gray-salmon-y3rubnaq.ws-us03.gitpod.io
 
 GET {{baseUrl}}/WeatherForecast HTTP/1.1
 

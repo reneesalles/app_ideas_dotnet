@@ -6,6 +6,37 @@
     </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-
+    <div id="bordered_box" class="m-auto bg-info border border-info">
+        <span class="handler h-t h-l h-tl h-tlh" *ngIf="mode!='B'"><input type="range" min="0" max="50" [(ngModel)]="ctrl_tlh" (input)="updateRanges($event)" /></span>
+        <span class="handler h-t h-l h-tl h-tlv" *ngIf="mode!='B'"><input type="range" min="0" max="50" [(ngModel)]="ctrl_tlv" (input)="updateRanges($event)" /></span>
+        <span class="handler h-t h-r h-tr h-trh" *ngIf="mode!='B'"><input type="range" min="0" max="50" [(ngModel)]="ctrl_trh" (input)="updateRanges($event)" /></span>
+        <span class="handler h-t h-r h-tr h-trv" *ngIf="mode!='B'"><input type="range" min="0" max="50" [(ngModel)]="ctrl_trv" (input)="updateRanges($event)" /></span>
+        <span class="handler h-b h-r h-br h-brh" *ngIf="mode!='B'"><input type="range" min="0" max="50" [(ngModel)]="ctrl_brh" (input)="updateRanges($event)" /></span>
+        <span class="handler h-b h-r h-br h-brv" *ngIf="mode!='B'"><input type="range" min="0" max="50" [(ngModel)]="ctrl_brv" (input)="updateRanges($event)" /></span>
+        <span class="handler h-b h-l h-bl h-blh" *ngIf="mode!='B'"><input type="range" min="0" max="50" [(ngModel)]="ctrl_blh" (input)="updateRanges($event)" /></span>
+        <span class="handler h-b h-l h-bl h-blv" *ngIf="mode!='B'"><input type="range" min="0" max="50" [(ngModel)]="ctrl_blv" (input)="updateRanges($event)" /></span>
+        <span class="handler blob blob-t" *ngIf="mode=='B'"><input type="range" min="0" max="100" [(ngModel)]="ctrl_blob_t" (input)="updateRanges($event)" /></span>
+        <span class="handler blob blob-r" *ngIf="mode=='B'"><input type="range" min="0" max="100" [(ngModel)]="ctrl_blob_r" (input)="updateRanges($event)" /></span>
+        <span class="handler blob blob-b" *ngIf="mode=='B'"><input type="range" min="0" max="100" [(ngModel)]="ctrl_blob_b" (input)="updateRanges($event)" /></span>
+        <span class="handler blob blob-l" *ngIf="mode=='B'"><input type="range" min="0" max="100" [(ngModel)]="ctrl_blob_l" (input)="updateRanges($event)" /></span>
+      </div>
   </mat-card-content>
+  <mat-card-actions>
+    <mat-form-field appearance="fill">
+      <mat-label>Mode</mat-label>
+      <mat-select [(ngModel)]="mode" (selectionChange)="resetRanges(); randomRanges();">
+        <mat-option value="A">All at once</mat-option>
+        <mat-option value="C">Corners only</mat-option>
+        <mat-option value="B">Blob</mat-option>
+        <mat-option value="F">Free</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button type="button" mat-flat-button color="primary" (click)="randomRanges();">Random</button>
+
+    <mat-form-field id="resultingOutput" appearance="fill">
+      <mat-label>Output CSS</mat-label>
+      <textarea matInput readonly [value]="get_border_style"></textarea>
+    </mat-form-field>
+  </mat-card-actions>
 </mat-card>
